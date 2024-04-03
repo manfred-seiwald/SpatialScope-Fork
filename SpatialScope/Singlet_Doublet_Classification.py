@@ -90,9 +90,9 @@ class SpatialScopeSDC:
         
         
     def LoadLikelihoodTable(self):
-        with gzip.open(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))+'/extdata/Q_mat_1_1.txt.gz','rt') as f:
+        with gzip.open(os.path.dirname(os.path.realpath(__file__))+'/extdata/Q_mat_1_1.txt.gz','rt') as f:
             lines = f.readlines()
-        with gzip.open(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))+'/extdata/Q_mat_1_2.txt.gz','rt') as f:
+        with gzip.open(os.path.dirname(os.path.realpath(__file__))+'/extdata/Q_mat_1_2.txt.gz','rt') as f:
             lines += f.readlines()
 
         Q1 = {}
@@ -104,9 +104,9 @@ class SpatialScopeSDC:
             else:
                 Q1[str(i + 10)] = np.reshape(np.array(lines[i].split(' ')).astype(np.float64), (2536, 103)).T
 
-        with gzip.open(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))+'/extdata/Q_mat_2_1.txt.gz','rt') as f:
+        with gzip.open(os.path.dirname(os.path.realpath(__file__))+'/extdata/Q_mat_2_1.txt.gz','rt') as f:
             lines2 = f.readlines()
-        with gzip.open(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))+'/extdata/Q_mat_2_2.txt.gz','rt') as f:
+        with gzip.open(os.path.dirname(os.path.realpath(__file__))+'/extdata/Q_mat_2_2.txt.gz','rt') as f:
             lines2 += f.readlines()
 
         Q2 = {}
@@ -115,7 +115,7 @@ class SpatialScopeSDC:
 
         Q_mat_all = Q1 | Q2
 
-        with open(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))+'/extdata/X_vals.txt') as f:
+        with open(os.path.dirname(os.path.realpath(__file__))+'/extdata/X_vals.txt') as f:
             lines_X = f.readlines()
 
         X_vals_loc = np.array([float(lines_X_item.strip()) for lines_X_item in lines_X])

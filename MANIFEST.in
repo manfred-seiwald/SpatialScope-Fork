@@ -1,1 +1,2 @@
-recursive-include extdata *
+recursive-include SpatialScope/extdata *
+include SpatialScope/default.json
