@@ -1,0 +1,7 @@
+demo_data
+*.pyc
+Ckpts_scRefs
+SpatialScope.egg-info
+output
+dist
+

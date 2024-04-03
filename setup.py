@@ -8,13 +8,14 @@ setup(
     author='Xiaomeng Wan (xwanaf@connect.ust.hk), Jiashun Xiao (jxiaoae@connect.ust.hk)',
     license='GPLv3',
     packages=find_packages(),
-    scripts=['src/Cell_Type_Identification.py','src/Nuclei_Segmentation.py', 'src/Singlet_Doublet_Classification.py', 'src/Decomposition.py','src/Train_scRef.py'],
+    # directory 'src' was changed to 'SpatialScope'
+    #scripts=['src/Cell_Type_Identification.py','src/Nuclei_Segmentation.py', 'src/Singlet_Doublet_Classification.py', 'src/Decomposition.py','src/Train_scRef.py'],
     include_package_data=True,    # 启用清单文件MANIFEST.in
     exclude_package_date={'':['.gitignore']},
     install_requires = ['scanpy',
                        'squidpy',
-                        'stardist',
-                        'tensorflow',
+                        #'stardist',
+                        #'tensorflow',
                         'qpsolvers',
                         'torch',
                         'scikit-learn',
