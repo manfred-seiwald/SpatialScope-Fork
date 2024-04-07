@@ -34,7 +34,8 @@ class MouseBrainRefDataset(torch.utils.data.Dataset):
 
     
 def sample_data(dataset, batch_size):
-    loader = DataLoader(dataset, shuffle=True, batch_size=batch_size, num_workers=4)
+    #loader = DataLoader(dataset, shuffle=True, batch_size=batch_size, num_workers=4)
+    loader = DataLoader(dataset, shuffle=True, batch_size=batch_size, num_workers=1)
     loader = iter(loader)
 
     while True:
@@ -43,7 +44,8 @@ def sample_data(dataset, batch_size):
 
         except StopIteration:
             loader = DataLoader(
-                dataset, shuffle=True, batch_size=batch_size, num_workers=4
+                #dataset, shuffle=True, batch_size=batch_size, num_workers=4
+                dataset, shuffle=True, batch_size=batch_size, num_workers=1
             )
             loader = iter(loader)
             yield next(loader)
